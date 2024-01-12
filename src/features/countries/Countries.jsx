@@ -1,4 +1,4 @@
-import { redirect, useLoaderData } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 import {
   getCountries,
   getCountry,

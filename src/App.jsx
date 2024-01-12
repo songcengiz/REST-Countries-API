@@ -12,7 +12,7 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
   const router = createBrowserRouter([
     {
-      basename: '/countries',
+      path:"/",
       element: <AppLayout darkMode={darkMode} setDarkMode={setDarkMode} />,
       errorElement: <Error />,
       children: [
@@ -23,7 +23,7 @@ function App() {
           errorElement: <Error />,
         },
         {
-          path: '/country/:alpha',
+          path: 'country/:alpha',
           element: <CountryDetail darkMode={darkMode} />,
           loader: countryDetailLoader,
           errorElement: <Error />,
