@@ -4,9 +4,7 @@ import CountryDetail, {
   loader as countryDetailLoader,
 } from './features/country/CountryDetail';
 import AppLayout from './ui/AppLayout';
-import Countries, {
-  loader as countriesLoader,
-} from './features/countries/Countries';
+import { loader as countriesLoader } from './features/countries/Countries';
 import Error from './ui/Error';
 import { useState } from 'react';
 
@@ -14,6 +12,7 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
   const router = createBrowserRouter([
     {
+      basename: '/countries',
       element: <AppLayout darkMode={darkMode} setDarkMode={setDarkMode} />,
       errorElement: <Error />,
       children: [
