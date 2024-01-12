@@ -19,22 +19,23 @@ function CountriesItem({ country, darkMode }) {
           alt={name.common}
           className=" h-fit w-full rounded-t-md object-fill lg:h-36"
         />
+
+        <div className="m-6 p-3">
+          <p className="pb-4 text-lg font-bold">{name.common}</p>
+          <p>
+            <span className="text-md ">Population: </span>
+            <span className="text-xs">{formattedNumber(population)}</span>
+          </p>
+          <p>
+            <span className="text-md  ">Region: </span>
+            <span className="text-xs">{region}</span>
+          </p>
+          <p>
+            <span className="text-md  ">Capital: </span>
+            <span className="text-xs">{capital}</span>
+          </p>
+        </div>
       </Link>
-      <div className="m-6 p-3">
-        <p className="pb-4 text-lg font-bold">{name.common}</p>
-        <p>
-          <span className="text-md ">Population: </span>
-          <span className="text-xs">{formattedNumber(population)}</span>
-        </p>
-        <p>
-          <span className="text-md  ">Region: </span>
-          <span className="text-xs">{region}</span>
-        </p>
-        <p>
-          <span className="text-md  ">Capital: </span>
-          <span className="text-xs">{capital}</span>
-        </p>
-      </div>
     </li>
   );
 }

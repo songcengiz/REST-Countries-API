@@ -1,6 +1,7 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import eslint from "vite-plugin-eslint";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import eslint from 'vite-plugin-eslint';
+import { resolve } from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -9,10 +10,17 @@ export default defineConfig({
     eslint({
       overrideConfig: {
         rules: {
-          "no-unused-vars": "warn",
+          'no-unused-vars': 'warn',
         },
       },
     }),
   ],
-  
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        404: resolve(__dirname, 'public/404.html'),
+      },
+    },
+  },
 });
