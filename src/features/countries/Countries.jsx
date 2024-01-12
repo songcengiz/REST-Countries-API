@@ -38,7 +38,6 @@ export async function loader({ request }) {
 
   if (searchTerm) return getCountry(searchTerm);
   if (filterTerm) return getFilterCountries(filterTerm);
-  if (filterTerm === 'all') return redirect('/');
   if (!searchTerm || !filterTerm) return countries;
 }
 
