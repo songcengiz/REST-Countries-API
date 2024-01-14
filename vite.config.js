@@ -14,6 +14,5 @@ export default defineConfig({
         },
       },
     }),
-  ],
-  base:"/rest-countries-API/"
+  ]
 });
