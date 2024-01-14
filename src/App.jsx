@@ -32,7 +32,7 @@ function App() {
   return (
     <RouterProvider
       router={router}
-      basename={import.meta.env.DEV ? '/' : '/rest-countries-API/'}
+      basename={import.meta.env.PROD ? '/' : '/rest-countries-API/'}
     />
   );
 }
