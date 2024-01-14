@@ -30,15 +30,6 @@ function Countries({ darkMode }) {
     </>
   );
 }
-export async function loader({ request }) {
-  const countries = await getCountries();
-  let url = new URL(request.url);
-  let searchTerm = url.searchParams.get('name');
-  let filterTerm = url.searchParams.get('region');
-
-  if (searchTerm) return getCountry(searchTerm);
-  if (filterTerm) return getFilterCountries(filterTerm);
-  if (!searchTerm || !filterTerm) return countries;
-}
 
 export default Countries;
+

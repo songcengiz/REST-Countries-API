@@ -1,31 +1,29 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Home from './ui/Home';
-import CountryDetail, {
-  loader as countryDetailLoader,
-} from './features/country/CountryDetail';
+import CountryDetail from './features/country/CountryDetail';
 import AppLayout from './ui/AppLayout';
-import { loader as countriesLoader } from './features/countries/Countries';
+
 import Error from './ui/Error';
 import { useState } from 'react';
+import { loaderCountries, loaderCountryDetail } from './services/loaders';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const router = createBrowserRouter([
     {
-      path:"/",
       element: <AppLayout darkMode={darkMode} setDarkMode={setDarkMode} />,
       errorElement: <Error />,
       children: [
         {
           path: '/',
           element: <Home darkMode={darkMode} />,
-          loader: countriesLoader,
+          loader: loaderCountries,
           errorElement: <Error />,
         },
         {
           path: 'country/:alpha',
           element: <CountryDetail darkMode={darkMode} />,
-          loader: countryDetailLoader,
+          loader: loaderCountryDetail,
           errorElement: <Error />,
         },
       ],

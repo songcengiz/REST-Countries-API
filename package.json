@@ -1,5 +1,5 @@
 {
-  "homepage": "https://songcengiz.githup.io/REST-Countries-API",
+  "homepage": "http://songcengiz.githup.io/rest-countries-API",
   "name": "rest-countries-api",
   "private": true,
   "version": "0.0.0",
@@ -10,7 +10,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "react": "^18.2.0",

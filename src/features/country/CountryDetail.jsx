@@ -170,10 +170,6 @@ function CountryDetail({ darkMode }) {
     </div>
   );
 }
-
-export async function loader({ params }) {
-  const countryDetail = await getCountryDetail(params.alpha);
-  return countryDetail;
-}
-
 export default CountryDetail;
+
+
