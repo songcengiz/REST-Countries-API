@@ -29,7 +29,12 @@ function App() {
       ],
     },
   ]);
-  return <RouterProvider router={router} />;
+  return (
+    <RouterProvider
+      router={router}
+      basename={import.meta.env.DEV ? '/' : '/rest-countries-API/'}
+    />
+  );
 }
 
 export default App;

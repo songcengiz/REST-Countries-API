@@ -1,10 +1,4 @@
 import { useLoaderData } from 'react-router-dom';
-import {
-  getCountries,
-  getCountry,
-  getFilterCountries,
-} from '../../services/apiRestCountries';
-
 import CountriesItem from './CountriesItem';
 
 function Countries({ darkMode }) {
@@ -32,4 +26,3 @@ function Countries({ darkMode }) {
 }
 
 export default Countries;
-

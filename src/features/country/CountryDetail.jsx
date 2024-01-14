@@ -1,9 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useLoaderData, useNavigate } from 'react-router-dom';
-import {
-  getCountries,
-  getCountryDetail,
-} from '../../services/apiRestCountries';
+import { getCountries } from '../../services/apiRestCountries';
 import {
   formatObject,
   formatObjectVal,
@@ -171,5 +168,3 @@ function CountryDetail({ darkMode }) {
   );
 }
 export default CountryDetail;
-
-
