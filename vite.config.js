@@ -5,7 +5,7 @@ import { resolve } from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/rest-countries-API/',
+  base: 'http://songcengiz.githup.io/rest-countries-API',
   plugins: [
     react(),
     eslint({
