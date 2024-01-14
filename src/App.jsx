@@ -9,27 +9,30 @@ import { loaderCountries, loaderCountryDetail } from './services/loaders';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
-  const router = createBrowserRouter([
-    {
-      element: <AppLayout darkMode={darkMode} setDarkMode={setDarkMode} />,
-      errorElement: <Error />,
-      children: [
-        {
-          path: '/',
-          element: <Home darkMode={darkMode} />,
-          loader: loaderCountries,
-          errorElement: <Error />,
-        },
-        {
-          path: 'country/:alpha',
-          element: <CountryDetail darkMode={darkMode} />,
-          loader: loaderCountryDetail,
-          errorElement: <Error />,
-        },
-      ],
-    },
-  ]);
-  return <RouterProvider router={router} basename={process.env.PUBLIC_URL} />;
+  const router = createBrowserRouter(
+    [
+      {
+        element: <AppLayout darkMode={darkMode} setDarkMode={setDarkMode} />,
+        errorElement: <Error />,
+        children: [
+          {
+            path: '/',
+            element: <Home darkMode={darkMode} />,
+            loader: loaderCountries,
+            errorElement: <Error />,
+          },
+          {
+            path: 'country/:alpha',
+            element: <CountryDetail darkMode={darkMode} />,
+            loader: loaderCountryDetail,
+            errorElement: <Error />,
+          },
+        ],
+      },
+    ],
+    { basename: '/rest-countries-API/' },
+  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
